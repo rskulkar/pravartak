@@ -5,6 +5,7 @@ Professional Certificate Programme in Agentic AI and Applications - December 202
 ## Folders
 
 - **assignments**: folder containing assignments related artefacts
+
 pravartak/
   ├── assignments/
   ├── LICENSE
