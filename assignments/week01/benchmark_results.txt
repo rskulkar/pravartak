@@ -1,0 +1,213 @@
+Python Script Optimization Benchmark
+========================================
+
+Version: Original
+Runtime: 0.078 seconds
+Improvement: 0.00%
+------------------------------
+Version: Refactored_v0
+Runtime: 0.026 seconds
+Improvement: 66.67%
+------------------------------
+Version: Optimized_v1
+Runtime: 0.027 seconds
+Improvement: 65.38%
+------------------------------
+
+Detailed Output
+========================================
+
+[Original] Output:
+reading folder: sample_texts
+Found 5 text files
+Top 50 keywords:
+ai : 4
+time : 3
+are : 3
+customer : 2
+support : 2
+machine : 2
+learning : 2
+data : 2
+python : 2
+product : 1
+quality : 1
+excellent : 1
+delivery : 1
+helpful : 1
+although : 1
+price : 1
+could : 1
+better : 1
+overall : 1
+i : 1
+would : 1
+recommend : 1
+anyone : 1
+looking : 1
+reliable : 1
+performance : 1
+recent : 1
+studies : 1
+show : 1
+sustainable : 1
+manufacturing : 1
+becoming : 1
+major : 1
+focus : 1
+governments : 1
+organizations : 1
+collaborating : 1
+reduce : 1
+carbon : 1
+emissions : 1
+driven : 1
+monitoring : 1
+systems : 1
+help : 1
+track : 1
+optimize : 1
+energy : 1
+usage : 1
+real : 1
+artificial : 1
+Total words: 129
+Unique words: 116
+Average frequency: 1.11
+Recomputing stats again (unnecessary):
+Words: 129  Unique: 116  Avg: 1.1120689655172413
+Time taken to execute the script: 0.002285003662109375 seconds
+Good speed but still can be optimized.
+Output files generated successfully.
+---- END OF SCRIPT ----
+
+========================================
+
+[Refactored_v0] Output:
+reading folder: sample_texts
+Found 5 text files
+Top 50 keywords:
+ai : 4
+time : 3
+are : 3
+customer : 2
+support : 2
+machine : 2
+learning : 2
+data : 2
+python : 2
+product : 1
+quality : 1
+excellent : 1
+delivery : 1
+helpful : 1
+although : 1
+price : 1
+could : 1
+better : 1
+overall : 1
+i : 1
+would : 1
+recommend : 1
+anyone : 1
+looking : 1
+reliable : 1
+performance : 1
+recent : 1
+studies : 1
+show : 1
+sustainable : 1
+manufacturing : 1
+becoming : 1
+major : 1
+focus : 1
+governments : 1
+organizations : 1
+collaborating : 1
+reduce : 1
+carbon : 1
+emissions : 1
+driven : 1
+monitoring : 1
+systems : 1
+help : 1
+track : 1
+optimize : 1
+energy : 1
+usage : 1
+real : 1
+artificial : 1
+Total words: 129
+Unique words: 116
+Average frequency: 1.11
+Time taken to execute the script: 0.001 seconds
+Good speed but still can be optimized.
+Output files generated successfully.
+---- END OF SCRIPT ----
+
+========================================
+
+[Optimized_v1] Output:
+reading folder: sample_texts
+Found 5 text files
+Top 50 keywords:
+ai : 4
+time : 3
+are : 3
+customer : 2
+support : 2
+machine : 2
+learning : 2
+data : 2
+python : 2
+product : 1
+quality : 1
+excellent : 1
+delivery : 1
+helpful : 1
+although : 1
+price : 1
+could : 1
+better : 1
+overall : 1
+i : 1
+would : 1
+recommend : 1
+anyone : 1
+looking : 1
+reliable : 1
+performance : 1
+recent : 1
+studies : 1
+show : 1
+sustainable : 1
+manufacturing : 1
+becoming : 1
+major : 1
+focus : 1
+governments : 1
+organizations : 1
+collaborating : 1
+reduce : 1
+carbon : 1
+emissions : 1
+driven : 1
+monitoring : 1
+systems : 1
+help : 1
+track : 1
+optimize : 1
+energy : 1
+usage : 1
+real : 1
+artificial : 1
+Total words: 129
+Unique words: 116
+Average frequency: 1.11
+Time taken: 0.002 seconds
+Good speed (optimized).
+Output files generated successfully.
+---- END OF SCRIPT ----
+
+========================================
+

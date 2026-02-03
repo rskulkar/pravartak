@@ -1,0 +1,3 @@
+Python has become one of the most popular programming languages.
+Its readability, community support, and library ecosystem make it ideal for AI projects.
+Developers often rely on Python for tasks such as automation, visualization, and data processing.
