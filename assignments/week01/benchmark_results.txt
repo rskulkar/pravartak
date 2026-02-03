@@ -2,16 +2,16 @@ Python Script Optimization Benchmark
 ========================================
 
 Version: Original
-Runtime: 0.078 seconds
+Runtime: 0.026 seconds
 Improvement: 0.00%
 ------------------------------
 Version: Refactored_v0
-Runtime: 0.026 seconds
-Improvement: 66.67%
+Runtime: 0.025 seconds
+Improvement: 3.85%
 ------------------------------
 Version: Optimized_v1
-Runtime: 0.027 seconds
-Improvement: 65.38%
+Runtime: 0.025 seconds
+Improvement: 3.85%
 ------------------------------
 
 Detailed Output
@@ -76,7 +76,7 @@ Unique words: 116
 Average frequency: 1.11
 Recomputing stats again (unnecessary):
 Words: 129  Unique: 116  Avg: 1.1120689655172413
-Time taken to execute the script: 0.002285003662109375 seconds
+Time taken to execute the script: 0.0008490085601806641 seconds
 Good speed but still can be optimized.
 Output files generated successfully.
 ---- END OF SCRIPT ----
@@ -204,7 +204,7 @@ artificial : 1
 Total words: 129
 Unique words: 116
 Average frequency: 1.11
-Time taken: 0.002 seconds
+Time taken: 0.001 seconds
 Good speed (optimized).
 Output files generated successfully.
 ---- END OF SCRIPT ----
