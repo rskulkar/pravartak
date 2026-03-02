@@ -3,3 +3,6 @@
 
 # CSV files
 *.csv
+
+# Large data files
+glove.6B.50d.txt
