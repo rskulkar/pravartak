@@ -4,5 +4,14 @@
 # CSV files
 *.csv
 
+# BASH files 
+*.zshrc
+*.bash_profile
+*.bashrc
+*.sh
+
+# Environment files
+.env
+
 # Large data files
 glove.6B.50d.txt
