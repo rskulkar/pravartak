@@ -9,9 +9,9 @@ Usage:
     python banking_crew.py --llm compare          # Both side-by-side
     python banking_crew.py --llm gemini --query "My card was declined"
 
-Required env vars (set in ~/.zshrc):
-    export GEMINI_API_KEY=your_gemini_key
-    export ANTHROPIC_API_KEY=your_anthropic_key   # only needed for claude/compare
+Required env vars (in .env file):
+    GEMINI_API_KEY=your_gemini_key
+    ANTHROPIC_API_KEY=your_anthropic_key   # only needed for claude/compare
 """
 
 import json
@@ -19,34 +19,42 @@ import re
 import os
 import argparse
 from datetime import datetime
+from pathlib import Path
 
-from crewai import Agent, Task, Crew, Process
+from dotenv import load_dotenv
+from crewai import Agent, Task, Crew, Process, LLM
 from crewai.tools import BaseTool
 from pydantic import BaseModel, Field
-from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_anthropic import ChatAnthropic
+
+# ── Load .env from the same directory as this script ──────────────────────
+_env_path = Path(__file__).parent / ".env"
+load_dotenv(dotenv_path=_env_path)
+# ──────────────────────────────────────────────────────────────────────────
 
 
 # ══════════════════════════════════════════════
 # LLM FACTORY
 # ══════════════════════════════════════════════
 
-def get_llm(provider: str):
+def get_llm(provider: str) -> LLM:
     """
-    Return a LangChain chat model for the requested provider.
-    CrewAI accepts any LangChain BaseChatModel as its llm= argument.
+    Return a CrewAI native LLM for the requested provider.
+    Uses CrewAI's built-in LLM class (wraps LiteLLM under the hood).
+    No langchain-google-genai or langchain-anthropic needed.
+
+    Model string format:  "gemini/gemini-1.5-flash"
+                          "anthropic/claude-3-5-haiku-20241022"
     """
     if provider == "gemini":
         key = os.environ.get("GEMINI_API_KEY")
         if not key:
             raise EnvironmentError(
                 "GEMINI_API_KEY not set.\n"
-                "Add to ~/.zshrc:  export GEMINI_API_KEY=your_key\n"
-                "Then run:         source ~/.zshrc"
+                "Add to .env:  GEMINI_API_KEY=your_key"
             )
-        return ChatGoogleGenerativeAI(
-            model="gemini-1.5-flash",
-            google_api_key=key,
+        return LLM(
+            model="gemini/gemini-1.5-flash",
+            api_key=key,
             temperature=0.1,
         )
 
@@ -55,12 +63,11 @@ def get_llm(provider: str):
         if not key:
             raise EnvironmentError(
                 "ANTHROPIC_API_KEY not set.\n"
-                "Add to ~/.zshrc:  export ANTHROPIC_API_KEY=your_key\n"
-                "Then run:         source ~/.zshrc"
+                "Add to .env:  ANTHROPIC_API_KEY=your_key"
             )
-        return ChatAnthropic(
-            model="claude-3-5-haiku-20241022",
-            anthropic_api_key=key,
+        return LLM(
+            model="anthropic/claude-3-5-haiku-20241022",
+            api_key=key,
             temperature=0.1,
         )
 
